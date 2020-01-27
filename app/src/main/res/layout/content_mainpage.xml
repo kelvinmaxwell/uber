@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Mainpage"
+    tools:showIn="@layout/app_bar_mainpage">
+
+
+    <Button
+        android:id="@+id/startpoint"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="127dp"
+        android:background="@drawable/my_shape"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter start point"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/enddest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="202dp"
+        android:background="@drawable/my_shape"
+        android:text="Stop destination"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
+    <fragment android:id="@+id/autocomplete_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+    />
+
+    <TextView
+        android:id="@+id/current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/my_shape" />
+
+    <EditText
+        android:id="@+id/returntime"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/my_shape"
+        android:ems="10"
+        android:hint="Return date..09:30-300"
+        android:inputType="textPersonName"
+        android:text="09:30-300"
+        android:textAlignment="center" />
+
+</RelativeLayout>
