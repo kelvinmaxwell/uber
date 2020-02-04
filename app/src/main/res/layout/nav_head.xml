@@ -10,22 +10,25 @@
     >
 
     <ImageView
+        android:id="@+id/image"
         android:layout_width="160dp"
         android:layout_height="106dp"
         android:paddingBottom="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bikelog"
         tools:visibility="visible" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
-        android:text="Main_Wharehouse"
+        android:text="G_BIKE"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 android:textSize="4dp"
-        android:text="we here to serve" />
+        android:text="Ride with us" />
 
 </LinearLayout>

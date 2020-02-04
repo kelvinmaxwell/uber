@@ -22,21 +22,23 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/Signin"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.5"
-            android:hint="Sign in"
-            android:onClick="open_signIn"
-android:textStyle="bold"
-            android:id="@+id/Signin"/>
+            android:background="@drawable/my_shape1"
+            android:hint="SIGN IN"
+
+            android:onClick="open_signIn" />
 
         <Button
             android:id="@+id/signup"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.5"
+            android:background="@drawable/my_shape1"
             android:onClick="open_signUp"
-            android:text="Signup" />
+            android:text="Sign up" />
     </LinearLayout>
 
 </RelativeLayout>

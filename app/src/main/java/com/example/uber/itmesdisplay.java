@@ -36,7 +36,7 @@ import java.util.Map;
 public class itmesdisplay extends Activity {
     // Log tag
     private static final String TAG = MainActivity.class.getSimpleName();
-public Button cartstart;
+
     // Movies json url
     private static final String url = "https://api.androidhive.info/json/movies.json";
     String url2 = "http://192.168.43.78/www/html/Naile_progect/addcart.php";
@@ -62,16 +62,15 @@ public Button cartstart;
         listView = (ListView) findViewById(R.id.list);
         adapter = new CustomListAdapter(this, movieList);
         listView.setAdapter(adapter);
-        cartstart=findViewById(R.id.cart_btn);
 
-secs();
+
         pDialog = new ProgressDialog(this);
         // Showing progress dialog before making http request
         pDialog.setMessage("Loading...");
         pDialog.show();
         Intent intent = getIntent();
         String action=intent.getStringExtra("action");
-        Toast.makeText(this, action, Toast.LENGTH_SHORT).show();
+
         if(action.equalsIgnoreCase("taken")){
             getimages(url3);
         }
@@ -88,7 +87,7 @@ secs();
      previlage =  intent.getStringExtra("previlage");
       phone =  intent.getStringExtra("phone");
 
-        Toast.makeText(getApplicationContext(), phone, Toast.LENGTH_SHORT).show();
+
 
 
         // changing action bar color
@@ -121,20 +120,6 @@ secs();
 
 
 
-    public void colorchange(){
-        if( cartstart.getText().toString()=="start"){
-           // cartstart.setVisibility(View.GONE);
-            cartstart.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-            cartstart.setText("cart");
-        }
-        else{
-           // cartstart.setVisibility(View.VISIBLE);
-            cartstart.setText("start");
-            cartstart.setBackgroundColor(getResources().getColor(R.color.list_row_end_color));
-        }
-
-
-    }
     public void getimages(String action1){
         JsonArrayRequest movieReq = new JsonArrayRequest(action1,
                 new Response.Listener<JSONArray>() {
@@ -207,7 +192,7 @@ secs();
                                         @Override
                                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                                            Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT).show();
+
                                             Intent intent1= getIntent();
                                             phone =  intent1.getStringExtra("phone");
                                             Intent intent = new Intent(getApplicationContext(),makepurchase.class);
@@ -264,13 +249,4 @@ secs();
 
 
 
-    public void secs(){
-        final Handler handler = new Handler();
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                colorchange();
-                handler.postDelayed(this, 200);
-            }
-        }, 10000);
-    }}
+ }

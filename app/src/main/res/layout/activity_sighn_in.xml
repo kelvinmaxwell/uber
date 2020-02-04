@@ -4,36 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bikelog"
     tools:context=".SighnIn">
 
 
     <EditText
         android:id="@+id/signintxt1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:textColor="@android:color/white"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="144dp"
         android:background="@drawable/my_shape"
+        android:textColorHint="@android:color/white"
         android:ems="10"
         android:hint="enter email"
         android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/sighnintxt2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="-5dp"
+        android:layout_marginStart="3dp"
         android:layout_marginTop="251dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="-3dp"
         android:background="@drawable/my_shape"
         android:ems="10"
         android:hint="enter password"
-        android:inputType="textEmailAddress" />
+        android:inputType="textPassword"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white" />
 
     <Button
         android:id="@+id/button"
@@ -41,7 +46,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginStart="-5dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/my_shape1"
         android:onClick="signinuser"
-        android:layout_marginBottom="299dp"
-        android:text="Button" />
+        android:text="Sign in"
+        android:textColor="@android:color/white" />
 </RelativeLayout>

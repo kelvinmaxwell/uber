@@ -79,7 +79,7 @@ SessionManager sessionManager;
 
    String receivedName =  intent.getStringExtra("name");
         String id =  intent.getStringExtra("id");
-        Toast.makeText(makepurchase.this, id, Toast.LENGTH_SHORT).show();
+
        //revelage =  intent.getStringExtra("previlage");
 
 
@@ -90,6 +90,7 @@ SessionManager sessionManager;
         String urlimage="http://192.168.43.78/www/html/trevormoha/";
         String suburl=intent.getStringExtra("image");
         String Combined=urlimage.concat(suburl);
+
        Picasso.get().load(Combined).error(R.mipmap.ic_launcher).into(imageView);
 
         listdata.setText(receivedName);
@@ -165,7 +166,7 @@ SessionManager sessionManager;
             }
         };
         MySingleton.getInstance(makepurchase .this).addToRequestQueue(stringRequest);
-        Toast.makeText(makepurchase.this, " added succesfully to cart", Toast.LENGTH_SHORT).show();
+        Toast.makeText(makepurchase.this, " returned", Toast.LENGTH_SHORT).show();
 
 
 

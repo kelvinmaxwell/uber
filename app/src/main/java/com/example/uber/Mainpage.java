@@ -132,10 +132,13 @@ current=findViewById(R.id.current);
 b4_source=findViewById(R.id.startpoint);
 b5destination=findViewById(R.id.enddest);
 returntime=findViewById(R.id.returntime);
+        Intent intent = getIntent();
+        String  price =  intent.getStringExtra("price");
+returntime.setText(price);
         auth=FirebaseAuth.getInstance();
         FirebaseUser user = auth.getCurrentUser();
         String user1=user.getUid();
-        Toast.makeText(this,  user1, Toast.LENGTH_SHORT).show();
+
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(user.getUid());
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -143,10 +146,11 @@ returntime=findViewById(R.id.returntime);
 
                 String name=mainSnapshot.child("name").getValue(String.class);
                 String email=mainSnapshot.child("email").getValue(String.class);
+                String phone=mainSnapshot.child("phone").getValue(String.class);
                 t1=findViewById(R.id.nametext);
                 t2=findViewById(R.id.emailtext);
                 t1.setText(name);
-                t2.setText(email);
+                t2.setText(phone);
 
             }
 
@@ -259,7 +263,11 @@ returntime=findViewById(R.id.returntime);
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_sighnout) {
+            auth.signOut();
+            Intent i=new Intent(Mainpage.this,MainActivity.class);
+            startActivity(i);
+            finish();
             return true;
         }
 
@@ -287,11 +295,13 @@ returntime=findViewById(R.id.returntime);
             String sessionId = getIntent().getStringExtra("EXTRA_SESSION_ID");
 
         } else if (id == R.id.nav_tools) {
+            if(t2.getText().toString().equalsIgnoreCase("254713510023")){
             Intent i=new Intent(Mainpage.this,itmesdisplay.class);
-            i.putExtra("action","taken");
-            startActivity(i);
-        } else if (id == R.id.nav_share) {
 
+            i.putExtra("action","taken");
+            startActivity(i);}else{
+                Toast.makeText(this, "accessible to admin only", Toast.LENGTH_SHORT).show();
+            }
         } else if (id == R.id.logout) {
             FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
             if(user!=null){
@@ -558,23 +568,22 @@ sendpaymentdata(d);
                // phone=intent.getStringExtra("phone");
                // String payamount= String.valueOf(cash);
                 String time_cash=returntime.getText().toString();
-                String text=time_cash;
-                String sub_text=text.substring(6);
-                int pay=Integer.parseInt(sub_text);
+
+                int pay=Integer.parseInt(time_cash);
 
                 int toto=(int)totals;
                 int d_in_km=toto/1000;
                 int total_payable=d_in_km*pay;
 
 
-     //09:30-300
+
 
 
 
                 String tt=String.valueOf(total_payable);
 
-System.out.println("maxicash"+sub_text);
-                params.put("phone", "254729312006");
+
+                params.put("phone", t2.getText().toString());
                 params.put("amount", tt);
                 params.put("orderno", orderno);
                 params.put("quantity", account_no);
@@ -588,7 +597,7 @@ System.out.println("maxicash"+sub_text);
         return_bike();
         MySingleton.getInstance(Mainpage .this).addToRequestQueue(stringRequest);
 
-
+        Toast.makeText(this, t2.getText().toString(), Toast.LENGTH_SHORT).show();
 
     }
 
@@ -626,7 +635,7 @@ System.out.println("maxicash"+sub_text);
             }
         };
         MySingleton.getInstance(Mainpage .this).addToRequestQueue(stringRequest);
-        Toast.makeText(Mainpage.this, " added succesfully to cart", Toast.LENGTH_SHORT).show();
+        Toast.makeText(Mainpage.this, " Paid", Toast.LENGTH_SHORT).show();
 
 
 

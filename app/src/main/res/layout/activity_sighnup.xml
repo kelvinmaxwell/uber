@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bike33"
     tools:context=".sighnup">
 
     <EditText
@@ -12,8 +13,10 @@
         android:layout_height="50dp"
         android:layout_marginTop="145dp"
 android:background="@drawable/my_shape"
+        android:textColor="@android:color/white"
         android:ems="10"
         android:hint="Name"
+        android:textColorHint="@android:color/white"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,11 +27,28 @@ android:background="@drawable/my_shape"
         android:layout_height="50dp"
         android:layout_marginTop="79dp"
         android:ems="10"
+        android:textColorHint="@android:color/white"
         android:hint="email"
+        android:textColor="@android:color/white"
         android:background="@drawable/my_shape"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/my_shape"
+        android:ems="10"
+        android:hint="phone_number(2547)"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <EditText
         android:id="@+id/editText3"
@@ -38,8 +58,9 @@ android:background="@drawable/my_shape"
         android:background="@drawable/my_shape"
         android:ems="10"
         android:hint="password"
-
-        android:inputType="textPersonName"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -47,10 +68,13 @@ android:background="@drawable/my_shape"
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="168dp"
         android:onClick="signupUser"
+        android:textColor="@android:color/white"
         android:text="Sign up"
+        android:background="@drawable/my_shape1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="-1dp"
         android:layout_marginTop="127dp"
-        android:background="@drawable/my_shape"
+        android:background="@drawable/my_shape1"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Enter start point"
@@ -32,7 +32,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="2dp"
         android:layout_marginTop="202dp"
-        android:background="@drawable/my_shape"
+        android:background="@drawable/my_shape1"
         android:text="Stop destination"
         android:textAllCaps="false"
         android:textSize="16sp" />
@@ -50,7 +50,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="39dp"
         android:layout_marginBottom="19dp"
-        android:background="@drawable/my_shape" />
+        android:background="@drawable/my_shape1" />
 
     <EditText
         android:id="@+id/returntime"
@@ -60,7 +60,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="44dp"
-        android:background="@drawable/my_shape"
+        android:background="@drawable/my_shape1"
         android:ems="10"
         android:hint="Return date..09:30-300"
         android:inputType="textPersonName"

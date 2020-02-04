@@ -84,7 +84,6 @@ genre.setText("PRICE: " +m.getPrice());
 descripion.setText("DESCRIPTION: "+m.getdescription());
 
         // release year
-        year.setText(String.valueOf("QUANTITY :"+m.getYear()));
 
         return convertView;
     }
